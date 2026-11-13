@@ -5,6 +5,12 @@ import plotly.graph_objects as go
 import joblib
 import numpy as np
 
+st.set_page_config(
+    page_title="Stock Market Risk Prediction",
+    page_icon="📈",
+    layout="wide"
+)
+
 @st.cache_resource
 def load_model():
     return joblib.load("stock_risk_random_forest_bundle.pkl")
@@ -458,18 +464,4 @@ elif page == "Prediction":
                     "not a guarantee of future market performance "
                     "or an investment recommendation."
                 )
-
-
-
-import pandas as pd
-
-df = pd.read_csv(
-    "nse_stock_historical_data_cleaned.csv"
-)
-
-st.write("Dataset Preview")
-st.dataframe(df.head())
-
-st.write("Dataset Dimensions")
-st.write(df.shape)
 
