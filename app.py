@@ -54,18 +54,32 @@ if page == "Business Problem":
     st.caption("Machine Learning Based Financial Risk Analytics")
 
     st.divider()
+    st.subheader("Project Team")
+
+    team = [
+        ("Bheemsetty Gokul", "25MBAR0407"),
+        ("Keshav S", "25MBAR0333"),
+        ("Deepthi B Doshi", "25MBAR0483"),
+        ("Yashas K S", "25MBAR0261"),
+        ("Phaneendra S", "25MBAR0087")
+    ]
+
+    for i, (name, usn) in enumerate(team, 1):
+        st.write(f"**{i}. {name}** — {usn}")
+
+    st.divider()
 
     # 1. Project Overview
     st.header("Project Overview")
-    st.write("Introduce your NSE stock risk prediction project.")
+    st.write("This project uses machine learning techniques to analyse historical NSE stock market data and classify stocks into Low, Medium and High volatility-risk categories. It aims to help investors understand market risk through data-driven insights.")
 
     # 2. Business Problem
     st.header("Business Problem")
-    st.write("Explain why investors need to assess stock market risk.")
+    st.write("Stock market investments are exposed to price fluctuations and changing market conditions. Investors often find it difficult to assess the level of risk associated with individual stocks. This project addresses the problem by providing a systematic, data-driven approach to stock volatility-risk classification.")
 
     # 3. Analytics Objective
     st.header("Analytics Objective")
-    st.write("Explain how your Random Forest model classifies stock risk.")
+    st.write("The objective is to develop a Random Forest classification model using historical stock indicators such as daily returns, rolling volatility, moving-average ratios and volume changes. The model predicts whether a selected stock belongs to the Low, Medium or High volatility-risk category.")
 
     st.divider()
 
@@ -79,7 +93,7 @@ if page == "Business Problem":
     col3.metric("ML Algorithm", "Random Forest")
 
     # 5. Dataset Information
-    st.header("Dataset Information")
+    st.header("Top 5 Records – Dataset Preview")
     st.dataframe(df.head(), use_container_width=True)
 
     # 6. Target Variable
